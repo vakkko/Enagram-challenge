@@ -1,8 +1,13 @@
+import { LogoContainer } from "./logo.styled";
+
 export default function Logo() {
   return (
-    <div>
-      <img src="./images/chevrons-left.png" />
-      <img src="./images/logo.png" />
-    </div>
+    <LogoContainer>
+      <img src="./images/chevrons-left.png" alt="left chevron" />
+      <div>
+        <img src="./images/logo.png" alt="logo" />
+        <img src="./images/ENAGRAM.png" alt="Enagram text" />
+      </div>
+    </LogoContainer>
   );
 }
