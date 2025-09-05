@@ -5,11 +5,13 @@ export default function SidebarMenu() {
   return (
     <SidebarMenuBox>
       <MenuItem icon={"./images/check.png"} text={"მართლმწერი"} />
+
       <MenuItem
         background
         icon={"./images/spelling.png"}
         text={"ტექსტის შედარება"}
       />
+
       <MenuItem
         icon={"./images/mic.png"}
         text={"ხმა"}

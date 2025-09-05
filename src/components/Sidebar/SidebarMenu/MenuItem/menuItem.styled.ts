@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MenuItemBox = styled.div<{ $background: boolean | undefined }>`
+export const MenuItemBox = styled.a<{ $background: boolean | undefined }>`
   display: flex;
   align-items: center;
   gap: 0.9rem;
@@ -18,12 +18,36 @@ export const MenuItemBox = styled.div<{ $background: boolean | undefined }>`
     & > p {
     font-weight: 700;
     }
+
     
-  background-color: var(--white);
-  width: 100%;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  padding: 2rem 0 2rem 1.2rem;
+    margin-left:-1.2rem;
+    background-color: var(--white);
+    width: calc(100% + 1.2rem);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 2rem 0 2rem 1.2rem;
+    position:relative;
+
+    &::before{
+    content:"";
+    position:absolute;
+    right:-1px;
+    top:-10px;
+    width:15px;
+    height:10px;
+    background-image:url(./images/curve-top.webp);
+    
+    }
+
+    &::after{
+    content:"";
+    position:absolute;
+    right:-1px;
+    bottom:-10px;
+    width:15px;
+    height:10px;
+    background-image:url(./images/curve-bottom.webp);
+    }
 
   `}
 `;
