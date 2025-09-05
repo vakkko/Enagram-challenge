@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   --blue: #132450;
   --darkGray: #383A48;
   --lightGray: #383A4899;
+  --borderGray: #9EB9FF33;
 }
 *{
     margin: 0;
