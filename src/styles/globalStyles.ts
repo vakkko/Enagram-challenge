@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
   --darkGray: #383A48;
   --lightGray: #383A4899;
   --borderGray: #9EB9FF33;
+  --skyBlue: #F0F7FF;
 }
 
 *{
@@ -34,6 +35,12 @@ button{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: transparent;
     border: none;
+}
+
+textarea{
+  resize: none;
+  border: none;
+  outline: none;
 }
 
 `;

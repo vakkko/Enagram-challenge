@@ -10,7 +10,7 @@ export default function TopBar() {
         <LanguageSelector />
         <OptionsToggle />
       </LeftBarBox>
-      <Button icon />
+      <Button text={"ახლის გახსნა"} icon />
     </TopBarCont>
   );
 }
