@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   --lightGray: #383A4899;
   --borderGray: #9EB9FF33;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -21,6 +22,12 @@ html{
 
 body{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#root{
+  display: flex;
+  gap: 2.4rem;
+  
 }
 
 `;
