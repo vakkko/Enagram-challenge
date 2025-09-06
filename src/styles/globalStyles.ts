@@ -30,6 +30,12 @@ body{
   
 }
 
+button{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: transparent;
+    border: none;
+}
+
 `;
 
 export default GlobalStyle;
