@@ -8,7 +8,9 @@ const GlobalStyle = createGlobalStyle`
   --darkGray: #383A48;
   --lightGray: #383A4899;
   --borderGray: #9EB9FF33;
-  --skyBlue: #F0F7FF;
+  --inputBackg: #F0F7FF;
+  --highlightRed: #B50022;
+  --highlightedGreeb: #3EBC5E;
 }
 
 *{
@@ -41,6 +43,7 @@ textarea{
   resize: none;
   border: none;
   outline: none;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 `;

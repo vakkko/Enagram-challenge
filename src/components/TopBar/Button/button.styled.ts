@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-export const GrayBtn = styled.button<{ $icon: boolean | undefined }>`
+export const GrayBtn = styled.button<{
+  $changeBackgr: boolean | undefined;
+  $icon: boolean | undefined;
+}>`
   color: var(--white);
-  background-color: #383a4899;
+  background-color: ${(props) =>
+    props.$changeBackgr ? "#4571E4" : "#383a4899"};
   font-size: 1.4rem;
   line-height: 28px;
   border-radius: 6px;
+  cursor: pointer;
 
   ${(props) =>
     props.$icon &&
