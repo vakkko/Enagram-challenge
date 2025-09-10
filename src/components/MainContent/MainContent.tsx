@@ -2,14 +2,17 @@ import { useState } from "react";
 import Button from "../TopBar/Button/Button";
 import { StyledMain } from "./mainContent.styled";
 import TextInput from "./TextInput/TextInput";
+import ProgressBar from "./ProgressBar/ProgressBar";
 
 export default function MainContent() {
   const [firstValue, setFirstValue] = useState<string>("");
   const [secondValue, setSecondValue] = useState<string>("");
   const [extraLetters, setExtraLetters] = useState<number[]>();
   const [missingLetters, setMissingLetters] = useState<number[]>();
+  const [showProgressBar, setShowProgressBar] = useState<boolean>(false);
 
   const handleClick = () => {
+    setShowProgressBar(true);
     const splitedFirstValue = firstValue.trim().split(" ");
     const splitedSecondValue = secondValue.trim().split(" ");
     const unmachedFirstVal: string[] = [];
@@ -96,28 +99,35 @@ export default function MainContent() {
   };
 
   return (
-    <StyledMain>
-      <div>
-        <TextInput
-          letters={extraLetters}
-          state={firstValue}
-          setState={setFirstValue}
-        />
-        <img src="./images/two-way-arrow.png" alt="two way arrow" />
-        <TextInput
-          greenHighlight
-          letters={missingLetters}
-          state={secondValue}
-          setState={setSecondValue}
-        />
-      </div>
-      <Button
-        changeBackgr={
-          firstValue.trim().length > 0 && secondValue.trim().length > 0
-        }
-        handleClick={handleClick}
-        text="შედარება"
-      />
+    <StyledMain $showProgressBar={showProgressBar}>
+      {showProgressBar ? (
+        <ProgressBar setShowProgressBar={setShowProgressBar} />
+      ) : (
+        <>
+          <div>
+            <TextInput
+              letters={extraLetters}
+              state={firstValue}
+              setState={setFirstValue}
+            />
+            <img src="./images/two-way-arrow.png" alt="two way arrow" />
+            <TextInput
+              greenHighlight
+              letters={missingLetters}
+              state={secondValue}
+              setState={setSecondValue}
+            />
+          </div>
+
+          <Button
+            changeBackgr={
+              firstValue.trim().length > 0 && secondValue.trim().length > 0
+            }
+            handleClick={handleClick}
+            text="შედარება"
+          />
+        </>
+      )}
     </StyledMain>
   );
 }

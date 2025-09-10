@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
-export const StyledMain = styled.main`
+export const StyledMain = styled.main<{ $showProgressBar: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  ${(props) =>
+    props.$showProgressBar &&
+    `
+  align-items: center;
+  justify-content:center;
+  `}
+
   & > div {
     display: flex;
     align-items: stretch;
-    height: 51vh;
+    height: ${(props) => (props.$showProgressBar ? "" : "51vh")};
     justify-content: space-between;
     margin-top: 2.4rem;
   }
