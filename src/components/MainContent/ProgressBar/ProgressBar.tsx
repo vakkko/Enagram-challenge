@@ -8,8 +8,10 @@ import {
 
 export default function ProgressBar({
   setShowProgressBar,
+  setResetLetters,
 }: {
   setShowProgressBar: React.Dispatch<SetStateAction<boolean>>;
+  setResetLetters: React.Dispatch<SetStateAction<boolean>>;
 }) {
   const [value, setValue] = useState<number>(0);
 
@@ -35,9 +37,11 @@ export default function ProgressBar({
   useEffect(() => {
     if (value === 100) {
       setShowProgressBar(false);
+      setResetLetters(true);
     }
   });
 
+  console.log(value);
   return (
     <>
       {value !== 100 && (

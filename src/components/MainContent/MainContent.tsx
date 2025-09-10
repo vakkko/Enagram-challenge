@@ -1,15 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState, type SetStateAction } from "react";
 import Button from "../TopBar/Button/Button";
 import { StyledMain } from "./mainContent.styled";
 import TextInput from "./TextInput/TextInput";
 import ProgressBar from "./ProgressBar/ProgressBar";
 
-export default function MainContent() {
-  const [firstValue, setFirstValue] = useState<string>("");
-  const [secondValue, setSecondValue] = useState<string>("");
+export default function MainContent({
+  firstValue,
+  secondValue,
+  setFirstValue,
+  setSecondValue,
+  resetLetters,
+  setResetLetters,
+}: {
+  firstValue: string;
+  secondValue: string;
+  setFirstValue: React.Dispatch<SetStateAction<string>>;
+  setSecondValue: React.Dispatch<SetStateAction<string>>;
+  resetLetters: boolean;
+  setResetLetters: React.Dispatch<SetStateAction<boolean>>;
+}) {
   const [extraLetters, setExtraLetters] = useState<number[]>();
   const [missingLetters, setMissingLetters] = useState<number[]>();
   const [showProgressBar, setShowProgressBar] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!resetLetters) {
+      setMissingLetters([]);
+      setExtraLetters([]);
+    }
+  }, [resetLetters]);
 
   const handleClick = () => {
     setShowProgressBar(true);
@@ -101,7 +120,10 @@ export default function MainContent() {
   return (
     <StyledMain $showProgressBar={showProgressBar}>
       {showProgressBar ? (
-        <ProgressBar setShowProgressBar={setShowProgressBar} />
+        <ProgressBar
+          setResetLetters={setResetLetters}
+          setShowProgressBar={setShowProgressBar}
+        />
       ) : (
         <>
           <div>
