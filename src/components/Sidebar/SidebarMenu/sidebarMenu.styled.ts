@@ -6,4 +6,11 @@ export const SidebarMenuBox = styled.div`
   gap: 3rem;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media screen and (max-width: 64rem) {
+    & {
+      border-bottom: 1px solid #ededed;
+      padding: 0 2.8rem;
+    }
+  }
 `;

@@ -46,6 +46,14 @@ textarea{
    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+
+  @media screen and (max-width: 64rem) {
+    #root {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
 `;
 
 export default GlobalStyle;

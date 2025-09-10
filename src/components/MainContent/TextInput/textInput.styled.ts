@@ -15,6 +15,12 @@ export const StyledTextarea = styled.textarea`
   outline: none;
   resize: none;
   overflow-y: auto;
+
+  @media screen and (max-width: 33.93rem) {
+    & {
+      height: 190px;
+    }
+  }
 `;
 
 export const InputContainer = styled.div`

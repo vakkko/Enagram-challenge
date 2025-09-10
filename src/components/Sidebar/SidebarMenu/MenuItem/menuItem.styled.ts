@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const MenuItemBox = styled.a<{ $background: boolean | undefined }>`
+export const MenuItemBox = styled.a<{
+  $background: boolean | undefined;
+  $active: boolean | undefined;
+}>`
   display: flex;
   align-items: center;
   gap: 0.9rem;
@@ -50,4 +53,20 @@ export const MenuItemBox = styled.a<{ $background: boolean | undefined }>`
     }
 
   `}
+
+  @media screen and (max-width: 64rem) {
+    & {
+      gap: 0;
+      display: ${(props) => (props.$active ? "flex" : "none")};
+      gap: 0.5rem;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
 `;

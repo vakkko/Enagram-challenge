@@ -7,6 +7,7 @@ export default function SidebarMenu() {
       <MenuItem icon={"./images/check.png"} text={"მართლმწერი"} />
 
       <MenuItem
+        active
         background
         icon={"./images/spelling.png"}
         text={"ტექსტის შედარება"}

@@ -20,4 +20,10 @@ export const UserBox = styled.div`
     font-size: 1.4rem;
     line-height: 20px;
   }
+
+  @media screen and (max-width: 64rem) {
+    & {
+      display: none;
+    }
+  }
 `;

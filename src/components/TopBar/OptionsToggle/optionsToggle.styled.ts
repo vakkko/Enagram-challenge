@@ -14,4 +14,9 @@ export const OptToggle = styled.div`
     border-radius: 4px;
     border: 1px solid #e0e0e0;
   }
+  @media screen and (max-width: 33.93rem) {
+    & {
+      width: 100%;
+    }
+  }
 `;

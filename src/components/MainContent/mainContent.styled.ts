@@ -27,4 +27,16 @@ export const StyledMain = styled.main<{ $showProgressBar: boolean }>`
     align-self: center;
     padding: 1rem 3.7rem;
   }
+
+  @media screen and (max-width: 33.93rem) {
+    & > div {
+      flex-direction: column;
+      gap: 1.6rem;
+      justify-content: flex-start;
+    }
+
+    & > div > img {
+      transform: rotate(90deg);
+    }
+  }
 `;

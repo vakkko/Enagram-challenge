@@ -21,4 +21,31 @@ export const LogoContainer = styled.div`
   & > div > p {
     color: var(--white);
   }
+
+  @media screen and (max-width: 64rem) {
+    & {
+      background-color: var(--blue);
+      padding: 1.2rem 3rem;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+  }
+`;
+
+export const ChevronImg = styled.img`
+  @media screen and (max-width: 64rem) {
+    & {
+      display: none;
+    }
+  }
+`;
+
+export const MenuImg = styled.img`
+  display: none;
+  @media screen and (max-width: 64rem) {
+    & {
+      display: Block;
+    }
+  }
 `;

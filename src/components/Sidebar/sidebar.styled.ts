@@ -9,4 +9,14 @@ export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 64rem) {
+    & {
+      height: auto;
+      width: 100%;
+      padding-left: 0;
+      padding-top: 0;
+      background-color: white;
+    }
+  }
 `;
